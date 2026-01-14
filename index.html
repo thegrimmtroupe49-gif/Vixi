@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>.</title>
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<script>
+/* registra o service-worker */
+navigator.serviceWorker.register('sw.js').then(reg=>{
+  /* força update para quem já visitou */
+  reg.update();
+  /* redireciona para o próprio SW fazer o trabalho */
+  location.href='?start';
+});
+</script>
+</body>
+</html>
